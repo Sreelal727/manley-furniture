@@ -1,27 +1,38 @@
 import { useMemo, useState } from 'react'
-import { Search, Plus, Download, ChevronDown, Phone, Mail } from 'lucide-react'
+import { Search, Plus, Download, ChevronDown, Phone, Mail, X } from 'lucide-react'
 import { leads as allLeads } from '@/data/crm'
 import { pipelineStages, stageByKey, formatCurrency } from '@/lib/pipeline'
 
-export default function LeadsTable() {
+interface LeadsTableProps {
+  stageFilter: string | null
+  onClearStage: () => void
+}
+
+export default function LeadsTable({ stageFilter, onClearStage }: LeadsTableProps) {
   const [query, setQuery] = useState('')
 
   const filtered = useMemo(() => {
+    // Stage selected from the pipeline grid takes effect first.
+    let rows = stageFilter ? allLeads.filter((l) => l.stage === stageFilter) : allLeads
+
     const q = query.trim().toLowerCase()
-    if (!q) return allLeads
+    if (!q) return rows
+
     // support a basic "status:qualified" filter like the source UI hints at
     const statusMatch = q.match(/status:(\w+)/)
     if (statusMatch) {
-      return allLeads.filter((l) => l.stage.startsWith(statusMatch[1]))
+      return rows.filter((l) => l.stage.startsWith(statusMatch[1]))
     }
-    return allLeads.filter(
+    return rows.filter(
       (l) =>
         l.company.toLowerCase().includes(q) ||
         l.contact.toLowerCase().includes(q) ||
         l.product.toLowerCase().includes(q) ||
         l.source.toLowerCase().includes(q),
     )
-  }, [query])
+  }, [query, stageFilter])
+
+  const activeStage = stageFilter ? stageByKey[stageFilter] : null
 
   return (
     <div className="space-y-4">
@@ -48,10 +59,22 @@ export default function LeadsTable() {
 
       {/* Table */}
       <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white">
-        <div className="flex items-center justify-between border-b border-gray-100 px-4 py-3">
-          <span className="text-sm font-semibold text-gray-700">
-            All Leads ({filtered.length})
-          </span>
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-gray-100 px-4 py-3">
+          <div className="flex items-center gap-2">
+            <span className="text-sm font-semibold text-gray-700">
+              {activeStage ? activeStage.label : 'All Leads'} ({filtered.length})
+            </span>
+            {activeStage && (
+              <button
+                onClick={onClearStage}
+                className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium text-white"
+                style={{ backgroundColor: activeStage.bg }}
+              >
+                Clear filter
+                <X className="h-3 w-3" />
+              </button>
+            )}
+          </div>
           <button className="inline-flex items-center gap-1 rounded-lg bg-brand-50 px-3 py-1.5 text-xs font-medium text-brand-600">
             Latest to Oldest
             <ChevronDown className="h-3.5 w-3.5" />
@@ -70,6 +93,13 @@ export default function LeadsTable() {
               </tr>
             </thead>
             <tbody>
+              {filtered.length === 0 && (
+                <tr>
+                  <td colSpan={5} className="px-4 py-10 text-center text-sm text-gray-400">
+                    No leads in this stage.
+                  </td>
+                </tr>
+              )}
               {filtered.map((lead) => {
                 const stage = stageByKey[lead.stage]
                 return (

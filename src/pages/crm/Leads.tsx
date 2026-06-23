@@ -1,9 +1,13 @@
+import { useState } from 'react'
 import { Users, ChevronDown } from 'lucide-react'
 import DailyInsights from './DailyInsights'
 import PipelineGrid from './PipelineGrid'
 import LeadsTable from './LeadsTable'
 
 export default function Leads() {
+  // Stage selected in the pipeline grid; filters the leads table below.
+  const [selectedStage, setSelectedStage] = useState<string | null>(null)
+
   return (
     <div className="space-y-6">
       <DailyInsights />
@@ -17,10 +21,16 @@ export default function Leads() {
             <ChevronDown className="h-4 w-4 text-gray-400" />
           </button>
         </div>
-        <PipelineGrid />
+        <PipelineGrid
+          selected={selectedStage}
+          onSelect={(key) => setSelectedStage((prev) => (prev === key ? null : key))}
+        />
       </section>
 
-      <LeadsTable />
+      <LeadsTable
+        stageFilter={selectedStage}
+        onClearStage={() => setSelectedStage(null)}
+      />
     </div>
   )
 }
