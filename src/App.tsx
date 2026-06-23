@@ -26,6 +26,7 @@ import {
   ErrorCodes,
 } from './pages/hrms/HrmsPages'
 
+import Inventory from './pages/inventory/Inventory'
 import { Tasks, Calendar, Reports, Settings } from './pages/Modules'
 
 export default function App() {
@@ -63,6 +64,9 @@ export default function App() {
           <Route path="recruitment" element={<Recruitment />} />
           <Route path="error-codes" element={<ErrorCodes />} />
         </Route>
+
+        {/* Inventory */}
+        <Route path="inventory" element={<Inventory />} />
 
         {/* Other top-level modules */}
         <Route path="tasks" element={<Tasks />} />
