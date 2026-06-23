@@ -13,7 +13,7 @@ const tabs = [
 export default function CrmLayout() {
   return (
     <div>
-      <div className="bg-white px-6 pt-5">
+      <div className="bg-white px-4 pt-5 sm:px-6">
         <div className="flex items-baseline gap-2">
           <h1 className="text-2xl font-bold text-brand-600">CRM</h1>
           <span className="text-sm text-gray-400">Kerala</span>

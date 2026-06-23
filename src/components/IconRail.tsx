@@ -9,7 +9,7 @@ export default function IconRail() {
         M
       </div>
 
-      <nav className="flex flex-1 flex-col items-center gap-1">
+      <nav className="flex flex-1 flex-col items-center gap-1 overflow-y-auto">
         {modules.map((m) => {
           const Icon = m.icon
           return (

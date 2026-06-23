@@ -43,32 +43,34 @@ export default function Dashboard() {
     <div className="space-y-4 p-4 sm:p-6">
       {/* KPI alert banner */}
       {showBanner && (
-        <div className="flex items-center gap-4 rounded-2xl bg-orange-500 px-5 py-4 text-white">
+        <div className="flex flex-col gap-3 rounded-2xl bg-orange-500 px-5 py-4 text-white sm:flex-row sm:items-center sm:gap-4">
           <div className="flex-1">
             <div className="text-base font-bold">Good evening, Super!</div>
             <div className="text-sm text-orange-50">
               314 items on today's calendar — 308 overdue and affecting your KPI.
             </div>
           </div>
-          <button className="flex items-center gap-2 rounded-xl bg-white px-4 py-2 text-sm font-semibold text-orange-600 hover:bg-orange-50">
-            <CalendarDays className="h-4 w-4" />
-            Open my Calendar
-            <ArrowRight className="h-4 w-4" />
-          </button>
-          <button
-            onClick={() => setShowBanner(false)}
-            className="rounded-lg p-1 hover:bg-orange-600"
-            aria-label="Dismiss"
-          >
-            <X className="h-5 w-5" />
-          </button>
+          <div className="flex items-center gap-2">
+            <button className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-white px-4 py-2 text-sm font-semibold text-orange-600 hover:bg-orange-50">
+              <CalendarDays className="h-4 w-4" />
+              Open my Calendar
+              <ArrowRight className="h-4 w-4" />
+            </button>
+            <button
+              onClick={() => setShowBanner(false)}
+              className="rounded-lg p-1 hover:bg-orange-600"
+              aria-label="Dismiss"
+            >
+              <X className="h-5 w-5" />
+            </button>
+          </div>
         </div>
       )}
 
       {/* Welcome hero */}
       <div className="rounded-2xl bg-purple-600 p-6 text-white">
         <div className="flex flex-wrap items-center gap-3">
-          <h1 className="text-3xl font-bold">Welcome back, Super Admin</h1>
+          <h1 className="text-2xl font-bold sm:text-3xl">Welcome back, Super Admin</h1>
           <Hand className="h-7 w-7 text-yellow-300" />
           <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 text-sm font-medium">
             <Medal className="h-4 w-4 text-amber-300" />
