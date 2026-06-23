@@ -7,6 +7,5 @@ const wrap = (title: string, note: string) => () => (
 )
 
 export const Tasks = wrap('Tasks', 'Task board and to-dos across the team.')
-export const Calendar = wrap('Calendar', 'Shared calendar of meetings, services and deadlines.')
 export const Reports = wrap('Reports', 'Sales, HR and operations analytics.')
 export const Settings = wrap('Settings', 'Company, users and system configuration.')

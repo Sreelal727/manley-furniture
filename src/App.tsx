@@ -27,7 +27,8 @@ import {
 } from './pages/hrms/HrmsPages'
 
 import Inventory from './pages/inventory/Inventory'
-import { Tasks, Calendar, Reports, Settings } from './pages/Modules'
+import Calendar from './pages/calendar/Calendar'
+import { Tasks, Reports, Settings } from './pages/Modules'
 
 export default function App() {
   return (
