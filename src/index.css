@@ -14,3 +14,15 @@ body,
   height: 100%;
   margin: 0;
 }
+
+/*
+ * WhatsApp-style chat wallpaper: a faint scattered doodle pattern on a warm
+ * neutral base. White cards sit on top of it for contrast. Applied to the main
+ * scroll area and the login screen.
+ */
+.wa-bg {
+  background-color: #e9e6df;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'><g fill='none' stroke='%23114b35' stroke-opacity='0.05' stroke-width='2' stroke-linecap='round'><circle cx='40' cy='45' r='12'/><path d='M118 30 h26 M131 17 v26'/><path d='M225 48 l16 28 h-32 z'/><rect x='30' y='130' width='22' height='22' rx='5'/><path d='M105 140 q11 -15 22 0 t22 0'/><circle cx='235' cy='150' r='9'/><path d='M60 235 h26 M73 222 v26'/><path d='M160 225 l16 28 h-32 z'/><rect x='215' y='225' width='22' height='22' rx='5'/><path d='M20 95 q11 -15 22 0 t22 0'/><circle cx='150' cy='90' r='7'/><path d='M270 110 h22 M281 99 v22'/></g></svg>");
+  background-size: 300px 300px;
+}
+

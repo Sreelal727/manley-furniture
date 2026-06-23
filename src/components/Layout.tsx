@@ -8,7 +8,7 @@ export default function Layout() {
       <IconRail />
       <div className="flex flex-1 flex-col overflow-hidden">
         <TopHeader />
-        <main className="flex-1 overflow-y-auto">
+        <main className="wa-bg flex-1 overflow-y-auto">
           <Outlet />
         </main>
       </div>

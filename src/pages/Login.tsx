@@ -41,7 +41,7 @@ export default function Login() {
       </div>
 
       {/* Form panel */}
-      <div className="flex w-full items-center justify-center bg-gray-50 p-8 lg:w-1/2">
+      <div className="wa-bg flex w-full items-center justify-center p-8 lg:w-1/2">
         <div className="w-full max-w-sm">
           <div className="mb-8 lg:hidden">
             <div className="flex items-center gap-2">

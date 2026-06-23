@@ -4,20 +4,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Primary blue used in the top header / icon rail
+        // Bright green primary (top header / icon rail / buttons)
         brand: {
-          50: '#eff4ff',
-          100: '#dbe6ff',
-          200: '#bdd0ff',
-          300: '#90b0ff',
-          400: '#5c84fb',
-          500: '#3b6fd4',
-          600: '#2f59b8',
-          700: '#274a99',
-          800: '#243f7d',
-          900: '#1e3a8a',
+          50: '#ecfdf3',
+          100: '#d1fadf',
+          200: '#a6f4c5',
+          300: '#6ce9a6',
+          400: '#32d583',
+          500: '#12b76a',
+          600: '#039855',
+          700: '#027a48',
+          800: '#05603a',
+          900: '#054f31',
         },
-        // Bright pink accent used for the active nav item
+        // Bright pink accent used for the active nav item (unchanged)
         accent: {
           DEFAULT: '#ec4899',
           dark: '#db2777',
