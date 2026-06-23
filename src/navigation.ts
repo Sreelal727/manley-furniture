@@ -1,22 +1,28 @@
-import { LayoutDashboard, type LucideIcon } from 'lucide-react'
+import {
+  LayoutDashboard,
+  Users,
+  UserCog,
+  CheckSquare,
+  CalendarDays,
+  BarChart3,
+  Settings,
+  type LucideIcon,
+} from 'lucide-react'
 
-export interface NavItem {
-  /** Route path (relative to root) */
+export interface ModuleNavItem {
+  /** Top-level route (icon rail) */
   path: string
-  /** Label shown in the sidebar */
   label: string
-  /** Icon component from lucide-react */
   icon: LucideIcon
 }
 
-/**
- * The ERP modules / tabs.
- *
- * NOTE: This is the single source of truth for the sidebar and the router.
- * Once the reference screenshots are available, add the remaining modules
- * (Inventory, Sales, Purchasing, Production, Reports, etc.) here and create a
- * matching page component under `src/pages/`.
- */
-export const navItems: NavItem[] = [
+/** Top-level modules shown in the thin left icon rail. */
+export const modules: ModuleNavItem[] = [
   { path: '/', label: 'Dashboard', icon: LayoutDashboard },
+  { path: '/crm', label: 'CRM', icon: Users },
+  { path: '/hrms', label: 'HRMS', icon: UserCog },
+  { path: '/tasks', label: 'Tasks', icon: CheckSquare },
+  { path: '/calendar', label: 'Calendar', icon: CalendarDays },
+  { path: '/reports', label: 'Reports', icon: BarChart3 },
+  { path: '/settings', label: 'Settings', icon: Settings },
 ]
