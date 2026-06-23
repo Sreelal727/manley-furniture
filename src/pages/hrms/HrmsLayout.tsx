@@ -24,7 +24,7 @@ export default function HrmsLayout() {
       <aside className="w-52 shrink-0 bg-white p-4">
         <div className="mb-4 flex items-baseline gap-2 px-2">
           <h1 className="text-xl font-bold text-purple-600">HRMS</h1>
-          <span className="text-xs text-gray-400">UAE</span>
+          <span className="text-xs text-gray-400">Kerala</span>
         </div>
         <nav className="space-y-1">
           {sections.map((s) => (

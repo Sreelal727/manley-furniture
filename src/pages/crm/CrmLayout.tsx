@@ -16,7 +16,7 @@ export default function CrmLayout() {
       <div className="bg-white px-6 pt-5">
         <div className="flex items-baseline gap-2">
           <h1 className="text-2xl font-bold text-brand-600">CRM</h1>
-          <span className="text-sm text-gray-400">UAE</span>
+          <span className="text-sm text-gray-400">Kerala</span>
         </div>
 
         <nav className="mt-3 flex gap-6 overflow-x-auto border-b border-gray-200">

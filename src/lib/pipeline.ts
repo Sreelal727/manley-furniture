@@ -31,7 +31,7 @@ export const stageByKey = Object.fromEntries(
   pipelineStages.map((s) => [s.key, s]),
 ) as Record<string, PipelineStage>
 
-/** Format a number as the app's currency (Omani rial symbol shown in the source UI). */
+/** Format a number as Indian rupees (lakh/crore grouping). */
 export function formatCurrency(value: number): string {
-  return '﷼ ' + value.toLocaleString('en-US', { maximumFractionDigits: 2 })
+  return '₹' + value.toLocaleString('en-IN', { maximumFractionDigits: 2 })
 }

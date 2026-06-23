@@ -1,6 +1,8 @@
+import { useNavigate } from 'react-router-dom'
 import { Bell, ChevronDown, LogOut, Search } from 'lucide-react'
 
 export default function TopHeader() {
+  const navigate = useNavigate()
   return (
     <header className="flex h-14 shrink-0 items-center gap-4 bg-brand-500 px-4 text-white">
       {/* Search */}
@@ -16,8 +18,8 @@ export default function TopHeader() {
       <div className="ml-auto flex items-center gap-3">
         {/* Country selector */}
         <button className="flex items-center gap-2 rounded-lg bg-brand-600 px-3 py-1.5 text-sm font-medium hover:bg-brand-700">
-          <span aria-hidden>🇴🇲</span>
-          <span>OMN</span>
+          <span aria-hidden>🇮🇳</span>
+          <span>IND</span>
           <ChevronDown className="h-4 w-4" />
         </button>
 
@@ -30,7 +32,10 @@ export default function TopHeader() {
         </button>
 
         {/* Sign out */}
-        <button className="flex flex-col items-center text-[11px] leading-none hover:opacity-90">
+        <button
+          onClick={() => navigate('/login')}
+          className="flex flex-col items-center text-[11px] leading-none hover:opacity-90"
+        >
           <LogOut className="h-5 w-5" />
           <span className="mt-0.5">Sign Out</span>
         </button>

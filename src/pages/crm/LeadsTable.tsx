@@ -18,6 +18,7 @@ export default function LeadsTable() {
       (l) =>
         l.company.toLowerCase().includes(q) ||
         l.contact.toLowerCase().includes(q) ||
+        l.product.toLowerCase().includes(q) ||
         l.source.toLowerCase().includes(q),
     )
   }, [query])
@@ -77,7 +78,10 @@ export default function LeadsTable() {
                     className="border-t border-gray-100"
                     style={{ backgroundColor: stage.bg + '12' }}
                   >
-                    <td className="px-4 py-3 font-medium text-gray-800">{lead.company}</td>
+                    <td className="px-4 py-3">
+                      <div className="font-medium text-gray-800">{lead.company}</div>
+                      <div className="mt-0.5 text-xs text-gray-400">{lead.product}</div>
+                    </td>
                     <td className="px-4 py-3 text-gray-600">
                       <div>{lead.contact}</div>
                       <div className="mt-0.5 flex gap-2 text-gray-400">
