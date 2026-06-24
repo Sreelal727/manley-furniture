@@ -27,6 +27,8 @@ import {
 } from './pages/hrms/HrmsPages'
 
 import Inventory from './pages/inventory/Inventory'
+import Billing from './pages/billing/Billing'
+import Installation from './pages/installation/Installation'
 import Calendar from './pages/calendar/Calendar'
 import { Tasks, Reports, Settings } from './pages/Modules'
 
@@ -68,6 +70,8 @@ export default function App() {
 
         {/* Inventory */}
         <Route path="inventory" element={<Inventory />} />
+        <Route path="billing" element={<Billing />} />
+        <Route path="installation" element={<Installation />} />
 
         {/* Other top-level modules */}
         <Route path="tasks" element={<Tasks />} />
