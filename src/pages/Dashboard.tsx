@@ -45,7 +45,7 @@ export default function Dashboard() {
       {showBanner && (
         <div className="flex flex-col gap-3 rounded-2xl bg-orange-500 px-5 py-4 text-white sm:flex-row sm:items-center sm:gap-4">
           <div className="flex-1">
-            <div className="text-base font-bold">Good evening, Super!</div>
+            <div className="text-base font-bold">Good evening, CEO!</div>
             <div className="text-sm text-orange-50">
               314 items on today's calendar — 308 overdue and affecting your KPI.
             </div>
@@ -70,7 +70,7 @@ export default function Dashboard() {
       {/* Welcome hero */}
       <div className="rounded-2xl bg-purple-600 p-6 text-white">
         <div className="flex flex-wrap items-center gap-3">
-          <h1 className="text-2xl font-bold sm:text-3xl">Welcome back, Super Admin</h1>
+          <h1 className="text-2xl font-bold sm:text-3xl">Welcome back, CEO</h1>
           <Hand className="h-7 w-7 text-yellow-300" />
           <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 text-sm font-medium">
             <Medal className="h-4 w-4 text-amber-300" />

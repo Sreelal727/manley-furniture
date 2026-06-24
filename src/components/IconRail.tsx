@@ -49,12 +49,12 @@ export default function IconRail() {
 
         {/* User */}
         <div className="mt-3 flex h-10 items-center">
-          <div className="flex h-10 w-11 shrink-0 items-center justify-center rounded-xl bg-accent text-sm font-semibold text-white">
-            SA
+          <div className="flex h-10 w-11 shrink-0 items-center justify-center rounded-xl bg-accent text-xs font-semibold text-white">
+            CEO
           </div>
           <div className="ml-3 overflow-hidden opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-            <div className="whitespace-nowrap text-sm font-medium text-white">Super Admin</div>
-            <div className="whitespace-nowrap text-xs text-brand-200">Administrator</div>
+            <div className="whitespace-nowrap text-sm font-medium text-white">CEO</div>
+            <div className="whitespace-nowrap text-xs text-brand-200">Chief Executive Officer</div>
           </div>
         </div>
       </aside>
