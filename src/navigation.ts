@@ -1,5 +1,7 @@
 import {
   LayoutDashboard,
+  Crown,
+  Gauge,
   Users,
   UserCog,
   Boxes,
@@ -22,6 +24,8 @@ export interface ModuleNavItem {
 /** Top-level modules shown in the thin left icon rail. */
 export const modules: ModuleNavItem[] = [
   { path: '/', label: 'Dashboard', icon: LayoutDashboard },
+  { path: '/ceo', label: 'CEO Dashboard', icon: Crown },
+  { path: '/kpi', label: 'KPI', icon: Gauge },
   { path: '/crm', label: 'CRM', icon: Users },
   { path: '/hrms', label: 'HRMS', icon: UserCog },
   { path: '/inventory', label: 'Inventory', icon: Boxes },

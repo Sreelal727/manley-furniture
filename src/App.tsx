@@ -1,8 +1,17 @@
+import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import NotFound from './pages/NotFound'
+
+// Chart-heavy pages are lazy-loaded so recharts is only fetched when needed.
+const CeoDashboard = lazy(() => import('./pages/ceo/CeoDashboard'))
+const Kpi = lazy(() => import('./pages/kpi/Kpi'))
+
+const PageLoading = () => (
+  <div className="p-10 text-sm text-gray-400">Loading…</div>
+)
 
 import CrmLayout from './pages/crm/CrmLayout'
 import Leads from './pages/crm/Leads'
@@ -38,6 +47,22 @@ export default function App() {
       <Route path="/login" element={<Login />} />
       <Route element={<Layout />}>
         <Route index element={<Dashboard />} />
+        <Route
+          path="ceo"
+          element={
+            <Suspense fallback={<PageLoading />}>
+              <CeoDashboard />
+            </Suspense>
+          }
+        />
+        <Route
+          path="kpi"
+          element={
+            <Suspense fallback={<PageLoading />}>
+              <Kpi />
+            </Suspense>
+          }
+        />
 
         {/* CRM */}
         <Route path="crm" element={<CrmLayout />}>
