@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import {
   CalendarDays,
   ArrowRight,
@@ -24,6 +25,7 @@ function useNow() {
 
 export default function Dashboard() {
   const now = useNow()
+  const navigate = useNavigate()
   const [showBanner, setShowBanner] = useState(true)
 
   const time = now.toLocaleTimeString('en-US', {
@@ -51,7 +53,10 @@ export default function Dashboard() {
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <button className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-white px-4 py-2 text-sm font-semibold text-orange-600 hover:bg-orange-50">
+            <button
+              onClick={() => navigate('/calendar')}
+              className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-white px-4 py-2 text-sm font-semibold text-orange-600 hover:bg-orange-50"
+            >
               <CalendarDays className="h-4 w-4" />
               Open my Calendar
               <ArrowRight className="h-4 w-4" />
